@@ -1,26 +1,6 @@
+apply plugin: 'java'
 
-task compileMS(type: JavaCompile) {
-	println 'Compling'
-	def srcDir = "samplejava/src"
-	println srcDir
-	source = fileTree(dir: srcDir, include: '**/*.java')
-	//create the classes folder if it does not exist
-	def classesDir = new File("./bin")
-	if( !classesDir.exists() ) {
-		classesDir.mkdirs()
-	}
-	destinationDir = file(classesDir)
-	println 'classesDir-'+classesDir
-	
+mainClassName = 'samplejava.CalculateCircleAreaExample'
+jar {
+	baseName = 'samplejava'
 }
-
-task createMSWar(type: War) {
-	def warDir = new File(".")
-	def srcDir = "samplejava/src"
-	println 'srcDir-'+srcDir
-	archiveName = "samplejava.jar"
-	println 'created war file in '+warDir
-    destinationDir = warDir
-}
-
-createMSWar.dependsOn compileMS
