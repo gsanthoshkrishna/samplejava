@@ -1,10 +1,26 @@
+
+task compileMS(type: JavaCompile) {
+	println 'Compling'
+	def srcDir = "samplejava/src"
+	println srcDir
+	source = fileTree(dir: srcDir, include: '**/*.java')
+	//create the classes folder if it does not exist
+	def classesDir = new File(".")
+	if( !classesDir.exists() ) {
+		classesDir.mkdirs()
+	}
+	destinationDir = file(classesDir)
+	println 'classesDir-'+classesDir
+	
+}
+
 task createMSWar(type: War) {
 	def warDir = new File(".")
 	def srcDir = "samplejava/src"
 	println 'srcDir-'+srcDir
-	archiveName = "samplejava.jar"
+	archiveName = "samplejava.war"
 	println 'created war file in '+warDir
     destinationDir = warDir
 }
 
-createMSWar
+createMSWar.dependsOn compileMS
