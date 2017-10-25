@@ -2,7 +2,7 @@ task createMSWar(type: War) {
 	def warDir = new File(".")
 	def srcDir = "samplejava/src"
 	println 'srcDir-'+srcDir
-	archiveName = "samplejava.war"
+	archiveName = "samplejava.jar"
 	println 'created war file in '+warDir
     destinationDir = warDir
 }
