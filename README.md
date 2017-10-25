@@ -1,1 +1,1 @@
-# samplejava
+# samplepractice
