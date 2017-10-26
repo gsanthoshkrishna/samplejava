@@ -1,6 +1,7 @@
 def is_prime(number):
     """Return True if *number* is prime."""
     for element in range(2,number):
+        print number
         if number % element == 0:
             return False
 
@@ -13,3 +14,9 @@ def print_next_prime(number):
         index += 1
         if is_prime(index):
             print(index)
+            
+
+if(is_prime(1)):
+    print "true"
+else:
+    print "false"
