@@ -15,8 +15,3 @@ def print_next_prime(number):
         if is_prime(index):
             print(index)
             
-
-if(is_prime(1)):
-    print "true"
-else:
-    print "false"
