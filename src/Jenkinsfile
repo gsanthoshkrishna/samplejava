@@ -7,8 +7,8 @@ pipeline {
                 /* `make check` returns non-zero on test failures,
                 * using `true` to allow the Pipeline to continue nonetheless
                 */
-                sh 'pytest src/test_primes.py --junitxml=out_report.xml' 
-                junit 'report.xml' 
+                sh 'pytest src/test_primes.py' 
+                
             }
         }
     }
