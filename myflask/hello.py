@@ -11,8 +11,8 @@ def hello():
 def prime4():
     retVal = is_prime(4)
     if retVal == True:
-        return "Hello Guru! value is prime"
-    return "Hello Guru! value is not a prime"
+        return "Hello Guru! value is a prime number"
+    return "Hello Guru! value is not a prime number"
 
 @app.route("/prime3")
 def prime3():
