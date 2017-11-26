@@ -11,7 +11,7 @@ class PrimesTestCase(unittest.TestCase):
     
     def test_is_four_prime(self):
         """Is five successfully dtermined to be prime?"""
-        self.assertTrue(is_prime(4))
+        self.assertTrue(is_prime(3))
     
     
 if __name__ == '__main__':
