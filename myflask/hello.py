@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello Guru!!!"
+    return "Hello Ravi!!!"
 
 
  
@@ -11,15 +11,15 @@ def hello():
 def prime4():
     retVal = is_prime(4)
     if retVal == True:
-        return "Hello Guru!!! value is a prime number"
-    return "Hello Guru!!! value is not a prime number"
+        return "Hello Ravi!!! value is a prime number"
+    return "Hello Ravi!!! value is not a prime number"
 
 @app.route("/prime3")
 def prime3():
     retVal = is_prime(3)
     if retVal == True:
-        return "Hello Guru!!! value is prime"
-    return "Hello Guru!!! value is not a prime"
+        return "Hello Ravi!!! value is prime"
+    return "Hello Ravi!!! value is not a prime"
 
 
 
