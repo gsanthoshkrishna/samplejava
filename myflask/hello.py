@@ -22,7 +22,6 @@ def prime3():
     return "Hello Ravi!!! value is not a prime"
 
 
-
 def is_prime(a):
     if a == 3:
         return True
