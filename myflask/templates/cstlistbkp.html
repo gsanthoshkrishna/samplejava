@@ -1,0 +1,117 @@
+<!--   Hello Danda Guru! -->
+<head>
+<style type="text/css">
+*  {
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	color: #333;
+	font-size: 1em;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #000;
+	text-decoration: none;
+}
+.container {
+  margin: 50px auto;
+  padding: 0 50px;
+  max-width: 960px;
+}
+table { 
+	background: #FFF;
+	border-collapse: collapse;
+	width: 100%;  
+}
+td,
+th { 
+	padding: 4px; 
+	border: 1px solid #CCC;
+	overflow: hidden;
+	text-align: left;
+	vertical-align: middle;
+}
+th { 
+	background-color: #DDD; 
+	font-weight: 400;
+}
+th a,
+td a { 
+	display: block;
+	width: 100%;
+}
+th a.sort-by { 
+	padding-right: 18px;
+	position: relative;
+}
+a.sort-by:before,
+a.sort-by:after {
+	border: 4px solid transparent;
+	content: "";
+	display: block;
+	height: 0;
+	right: 5px;
+	top: 50%;
+	position: absolute;
+	width: 0;
+}
+a.sort-by:before {
+	border-bottom-color: #666;
+	margin-top: -9px;
+}
+a.sort-by:after {
+	border-top-color: #666;
+	margin-top: 1px;
+}
+</style>
+</head>
+
+<div class="meter">
+	<span style="width: 25%"></span>
+</div>
+
+<div class="container">
+<form action="/cstlist" method="POST">
+<table>
+<thead>
+<tr>
+<th scope="col"><a href="#" class="sort-by">User</a></th>
+<th scope="col"><a href="#" class="sort-by">ExpiresOn</a></th>
+<th scope="col"><a href="#" class="sort-by">Balance</a></th>
+<th scope="col"><a href="#" class="sort-by">Phone</a></th>
+</tr>
+</thead>
+<tbody>
+{% for tgtJsonItem in tgtJson %}
+<tr><td>{{ tgtJsonItem.user }}</td><td bgcolor= {{ tgtJsonItem.color }}>{{ tgtJsonItem.expiry }}</td><td>{{ tgtJsonItem.phone }}</td><td>{{ tgtJsonItem.balance}}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+<button type="submit">Add</button>
+</form>
+</div>
+
+
+<form action="/cstlist" method="POST">
+<ul>
+    <li>
+        <button type="submit" name="0" value="0" >A</button>
+    </li>
+    <li><button type="submit" name="1" value="1" >B</button></li>
+    <li><button type="submit" name="2" value="2" >C</button></li>
+</ul>
+</form>
+<form action="/newUser">
+<table border="1"><tr><th>UserID</th>
+<th><label name = "sortBy" value = "1">ExpiresOn</label></th><th><label name = "sortBy" value = "2">Phone</label></th><th>Balance</th></tr>
+{% for tgtJsonItem in tgtJson %}
+<tr><td>{{ tgtJsonItem.user }}</td><td bgcolor= {{ tgtJsonItem.color }}>{{ tgtJsonItem.expiry }}</td><td>{{ tgtJsonItem.phone }}</td><td>{{ tgtJsonItem.balance}}</td></tr>
+{% endfor %}
+</table>
+<button type="submit">Add</button>
+</form> 

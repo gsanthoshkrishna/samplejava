@@ -1,0 +1,143 @@
+<!--   Hello Danda Guru! -->
+<head>
+
+<script type="text/javascript">
+<!--
+
+//-->
+
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch= true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+</script>
+
+
+
+<style type="text/css">
+*  {
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	color: #333;
+	font-size: 1em;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #000;
+	text-decoration: none;
+}
+.container {
+  margin: 50px auto;
+  padding: 0 50px;
+  max-width: 960px;
+}
+table { 
+	background: #FFF;
+	border-collapse: collapse;
+	width: 100%;  
+}
+td,
+th { 
+	padding: 4px; 
+	border: 1px solid #CCC;
+	overflow: hidden;
+	text-align: left;
+	vertical-align: middle;
+}
+th { 
+	background-color: #DDD; 
+	font-weight: 400;
+}
+th a,
+td a { 
+	display: block;
+	width: 100%;
+}
+th a.sort-by { 
+	padding-right: 18px;
+	position: relative;
+}
+a.sort-by:before,
+a.sort-by:after {
+	border: 4px solid transparent;
+	content: "";
+	display: block;
+	height: 0;
+	right: 5px;
+	top: 50%;
+	position: absolute;
+	width: 0;
+}
+a.sort-by:before {
+	border-bottom-color: #666;
+	margin-top: -9px;
+}
+a.sort-by:after {
+	border-top-color: #666;
+	margin-top: 1px;
+}
+</style>
+</head>
+
+<div class="meter">
+	<span style="width: 25%"></span>
+</div>
+
+<div class="container">
+<form action="/cstlist" method="Post">
+<table>
+<thead>
+<tr>
+<th id="User" name="User"  value="User" scope="col"><a id="User1" name="User1"  value="User1" href="" class="sort-by">User</a></th>
+<th scope="col"><a name="ExpiresOn"  vlue="ExpiresOn" href="" class="sort-by">ExpiresOn</a></th>
+<th scope="col"><a name="Balance" value="Balance" href="" class="sort-by">Balance</a></th>
+<th scope="col"><a name="Phone" value="Phone" href="" class="sort-by">Phone</a></th>
+</tr>
+</thead>
+<tbody>
+{% for tgtJsonItem in tgtJson %}
+<tr><td>{{ tgtJsonItem.user }}</td><td bgcolor= {{ tgtJsonItem.color }}>{{ tgtJsonItem.expiry }}</td><td>{{ tgtJsonItem.phone }}</td><td>{{ tgtJsonItem.balance}}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+<button type="submit">Add</button>
+</form>
+</div>
+
