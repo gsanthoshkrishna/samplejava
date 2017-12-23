@@ -5,6 +5,7 @@ pipeline {
         stage('checkout') {
             steps {
                 checkout scm
+                sh 'sudo cp -R myflask/* /home/santhosh/demoflas/'
             }
         }
         stage('Test') {

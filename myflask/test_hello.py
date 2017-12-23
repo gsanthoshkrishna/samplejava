@@ -1,6 +1,5 @@
 import unittest
 from hello import is_prime
-
 class PrimesTestCase(unittest.TestCase):
     """Tests for `primes.py`."""
 
