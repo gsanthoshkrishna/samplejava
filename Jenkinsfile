@@ -1,6 +1,22 @@
-def pipeline
-    node('slave') {
-        pipeline = load 'test.groovy'
-        pipeline.firstTest()
+pipeline {
+    agent any
+
+    stages {
+        stage('build') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Test') {
+            steps {
+                /* `make check` returns non-zero on test failures,
+                * using `true` to allow the Pipeline to continue nonetheless
+                */
+                pipeline = load 'test.groovy'
+        		pipeline.firstTest() 
+                
+            }
+        }
     }
+}
     
