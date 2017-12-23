@@ -1,5 +1,5 @@
 def firstTest() {
-    sh 'pwd'
+    sh 'echo Hello'
 }
 
 return this
