@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('build') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Test') {
+            steps {
+                /* `make check` returns non-zero on test failures,
+                * using `true` to allow the Pipeline to continue nonetheless
+                */
+                sh 'echo Hello!' 
+                
+            }
+        }
+    }
+}
