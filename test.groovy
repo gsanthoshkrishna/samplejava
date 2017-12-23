@@ -1,5 +1,5 @@
 def firstTest() {
-    pwd()
+    sh 'pwd'
 }
 
 return this
