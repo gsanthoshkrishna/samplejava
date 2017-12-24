@@ -1,5 +1,5 @@
 def firstTest() {
-    sh 'echo Hi'
+    sh 'echo Hi!'
 }
 
 return this
