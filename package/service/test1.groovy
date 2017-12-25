@@ -1,5 +1,6 @@
-def secondTest41() {
-	sh 'echo this is build in service'
+def testservice() {
+    sh 'echo inservice'
+    
 }
 
 return this
