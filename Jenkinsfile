@@ -1,7 +1,8 @@
 def pipeline
 node('master') {
 		checkout scm
-		sh 'git show --name-only origin/master'
+		def pipeline = load 'package/ui-web/test2.groovy'
+		pipeline.firstTest14()
     }
     
     

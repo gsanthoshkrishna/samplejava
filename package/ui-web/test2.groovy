@@ -1,5 +1,5 @@
 def firstTest14() {
-    sh 'echo build in ui-web'
+    def me = sh 'git show --name-only origin/master'
 }
 
 return this
