@@ -1,4 +1,4 @@
-def secondTest() {
+def secondTest4() {
 	sh 'echo this is build in service'
 }
 
