@@ -1,5 +1,5 @@
 def firstTest16() {
-    def me = sh 'git show --name-only origin/master'
+    def me = sh (script:'git show --name-only origin/master',returnStdout).trim().split('/')
     me.split('/')
 }
 
