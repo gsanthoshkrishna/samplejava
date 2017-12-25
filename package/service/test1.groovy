@@ -1,5 +1,5 @@
 def testservice() {
-    sh 'echo inservice'
+    sh 'echo ---inservice'
     
 }
 
