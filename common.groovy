@@ -1,5 +1,5 @@
 def me = sh (script:'git show --name-only origin/master',returnStdout:true).trim().split('/')
-
+println("------------output-------------"
 for (i = 0; i <me.length; i++) {
    println(me[i])
 }
