@@ -1,5 +1,5 @@
 def secondTest() {
-	sh 'echo build in service'
+	sh 'echo this is build in service'
 }
 
 return this
