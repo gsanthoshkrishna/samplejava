@@ -1,5 +1,5 @@
 def firstTest() {
-    sh 'echo Hi!'
+    sh 'echo build in ui-web'
 }
 
 return this
