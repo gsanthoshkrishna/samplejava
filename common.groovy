@@ -6,6 +6,7 @@ for (i = 0; i <me.length; i++) {
    {
       def pipeui = load 'package/ui-web/test2.groovy'
       pipeui.testui()
+      currentBuild.displayName = 'ui-web'+currentBuild.displayName
    }
    if(me[i] == 'service')
    {

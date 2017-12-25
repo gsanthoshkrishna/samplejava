@@ -1,5 +1,5 @@
 def testui() {
-    sh 'echo ----intestui- '
+    sh 'echo ----rintestui- '
     
 }
 
