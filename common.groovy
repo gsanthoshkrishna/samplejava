@@ -5,4 +5,4 @@ pipetest.testui()
 
 
 def pipeserv = load 'package/service/test1.groovy'
-pipetest.testservice()
+pipeserv.testservice()
