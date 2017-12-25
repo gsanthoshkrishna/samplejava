@@ -1,4 +1,4 @@
-def firstTest1() {
+def firstTest17() {
     sh 'echo build in ui-web'
 }
 
