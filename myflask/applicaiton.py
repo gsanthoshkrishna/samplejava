@@ -1,16 +1,8 @@
 from flask import Flask,request
 from flask.templating import render_template
 import datetime,time,requests,json,sqlite3,os
-import plotly.plotly as py
-import plotly.graph_obs as go 
 
 
-def plotPie():
-    labels = ['BANK','IT','PHARMA','METAL']
-    values = [10,20,30,40]
-    trace = go.pie(labels = labels, values = values)
-    pi.iplot([trace],filename='basic_pie_chart')
- 
 # print( a nice greeting.
 #TODO add try catch
 def checkOrderFile():
